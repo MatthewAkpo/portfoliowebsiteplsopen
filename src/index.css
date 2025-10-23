@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.cursor-blink{
+    content: '|';
+    animation: blink 0.75s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  .chisom {
+    animation: chisom 10s infinite ease-in-out;
+    background-size: 200%; /* Ensure smooth gradient movement */
+    background-position: 0%; /* Start from the left */
+    background-image: linear-gradient(120deg, #3b82f6, #000);
+}
+
+@keyframes chisom {
+    0% {
+        background-position: 0%; /* Start gradient from left */
+    }
+    50% {
+        background-position: 100%; /* Move gradient to the right */
+    }
+    100% {
+        background-position: 0%; /* Move gradient back to the left */
+    }
+}
+@keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-marquee {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    will-change: transform;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
